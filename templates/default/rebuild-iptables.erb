@@ -54,6 +54,7 @@ end
 def install_rules(data)
   Dir.mkdir('/etc/iptables') unless File.directory?('/etc/iptables')
   write_iptables('/etc/iptables/general', data)
+  return false unless system('/sbin/iptables-restore --test < /etc/iptables/general')
   return false unless system('/sbin/iptables-restore < /etc/iptables/general')
   if File.exist?('/etc/sysconfig/iptables')
     return false unless system("cp /etc/iptables/general /etc/sysconfig/iptables")
