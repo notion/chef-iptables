@@ -1,6 +1,33 @@
 # iptables Cookbook CHANGELOG
 This file is used to list changes made in each version of the iptables cookbook.
 
+## 4.3.4 (2018-02-15)
+
+- Fix converge failures in the custom resource introduced in 4.3.3
+- Remove stove and tomlrb from the Gemfile
+- use apt_update not apt cookbook in testing
+- Add Amazon Linux to test kitchen
+- Simplify the platform family check using our helpers
+
+## 4.3.3 (2018-02-15)
+
+- Don't use kind_of in the custom resource (FC117)
+
+## 4.3.2 (2018-02-07)
+
+- Fix FC108 to resolve test failures
+- Switch from ServerSpec to InSpec
+- Resolve ChefSpec warnings
+- Remove ChefSpec matchers that are no longer needed since ChefSpec autogenerates these
+
+## 4.3.1 (2017-11-06)
+
+- Updating namespace for attribute-based rules in the readme
+
+## 4.3.0 (2017-10-28)
+
+- Add Amazon Linux support on Chef 13
+
 ## 4.2.1 (2017-09-08)
 
 - Resolve deprecation warning

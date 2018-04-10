@@ -3,7 +3,8 @@
 # Cookbook:: iptables
 # Resource:: rule
 #
-# Copyright:: 2015-2016, Tim Smith
+# Copyright:: 2015-2018, Tim Smith
+# Copyright:: 2017-2018, Chef Software, Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,12 +18,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-property :name, kind_of: String, name_attribute: true
-property :source, kind_of: String, default: nil
-property :cookbook, kind_of: String, default: nil
-property :variables, kind_of: Hash, default: {}
-property :lines, kind_of: String, default: nil
-property :table, kind_of: Symbol, default: nil
+property :source, String
+property :cookbook, String
+property :variables, Hash, default: {}
+property :lines, String
+property :table, Symbol
 
 action :enable do
   # ensure we have execute[rebuild-iptables] in the outer run_context

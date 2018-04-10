@@ -1,8 +1,4 @@
-require 'serverspec'
-
-set :backend, :exec
-
-if os[:family] == 'redhat'
+if os[:family] == 'redhat' && os[:release].start_with?('6')
   describe command('/etc/init.d/iptables status') do
     its(:stdout) { should match /Table: filter/ }
   end
